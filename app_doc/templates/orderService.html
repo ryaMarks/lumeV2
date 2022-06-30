@@ -1,0 +1,155 @@
+{% load static%}
+
+<head>
+    <!--importa o CDN do bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!--importa CDN do materialize-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!--Configurações da página-->
+    <link rel="stylesheet" href= '{% static "css/os.css" %}'>  <!--importa css da pagina-->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/Cabeçalho_1/favicons/favicon-16x16.png' %}">  <!--Insere icone da pagina(favicon)-->
+    <title>Lume Energia</title>  <!--Titulo da pagina-->
+</head>
+
+<body>
+    <div class="container">
+        <div class="container">
+            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+                <a href="http://127.0.0.1:8000/clientes">
+                <span><img src="{% static 'img/lumi_original.png' %}"></span>
+              </a>
+
+              <ul class="nav nav-pills">
+                <li class="nav-item"><a href="#" class="nav-link" >Vendas</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Projetos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Obras</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Gereciamento</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Logout</a></li>
+              </ul>
+            </header>
+        </div>
+        <p style="text-align: center; padding: 10px;"><b>ORDEM DE SERVIÇO</b></p>
+        <table align="center">
+            <tr>
+                <th class="t1" colspan="2">DADOS INICIAIS</th>
+            </tr>
+            <tr>
+                <td class="c1">Cliente</td>
+                <td><b>{{lista.nome}}</b></td>
+            </tr>
+            <tr>
+                <td class="c1">Telefone do cliente</td>
+                <td>{{lista.fone}}</td>
+            </tr>
+            <tr>
+                <td class="c1">Endereço</td>
+                <td>{{lista.adress}}</td>
+            </tr>
+            <tr>
+                <td class="c1">Equipe de instalação</td>
+                <td><b>{{equipe}}</b></td>
+            </tr>
+            <tr>
+                <td class="c1">Data de início da obra</td>
+                <td><b>{{inicio_obra}}</b></td>
+            </tr>
+            <tr>
+                <td class="c1">Previsão de termino da obra</td>
+                <td><b>{{fim_obra}}</b></td>
+            </tr>
+        </table>
+        <p></p>
+        <table align="center">
+            <tr>
+                <th class="t2" colspan="3">DADOS DO SISTEMA FOTOVOLTAICO</th>
+            </tr>
+            <tr>
+                <td class="c2-1">PRODUTO</td>
+                <td class="c2-2">DESCRIÇÃO</td>
+                <td class="c2-3">QUANTIDADE</td>
+            </tr>
+            <tr>
+                <td>POTÊNCIA DO SISTEMA</td>
+                <td>{{lista.sis_pot}}</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>INVERSOR</td>
+                <td>{{lista.inversor}}</td>
+                <td>{{lista.qt_inv}}</td>
+            </tr>
+            <tr>
+                <td>MÓDULOS</td>
+                <td>{{lista.mod}}</td>
+                <td>{{lista.qt_mod}}</td>
+            </tr>
+            <tr>
+                <td>STRINGBOX</td>
+                <td>{{strBx}}</td>
+                <td>{{qt_strBx}}</td>
+            </tr>
+        </table>
+        <p></p>
+        <table align="center">
+            <tr>
+                <th class="t2" colspan="2">PADRÃO DE ENTRADA E PROTEÇÃO DO SISTEMA</th>
+            </tr>
+            <tr>
+                <td class="c3-1">DISJUNTOR CA DO PADRÃO DE ENTRADA</td>
+                <td class="c3-2">{{iDisj}}</td>
+            </tr>
+            <tr>
+                <td>DISJUNTOR CA DO SISTEMA FOTOVOLTÁICO</td>
+                <td>{{iDisjSis}}</td>
+            </tr>
+            <tr>
+                <td>PADRÃO ATUAL EXISTENTE</td>
+                <td>{{lista.tipo_padrao}}</td>
+            </tr>
+            <tr>
+                <td>PADRÃO VAI PRECISAR SER MUDADO?</td>
+                <td>{{lista.mudar_padrao}}</td>
+            </tr>
+            <tr>
+                <td>DPS CC</td>
+                <td>{{dps}}</td>
+            </tr>
+        </table>
+        <p></p>
+        <table align="center">
+            <tr>
+                <th class="t2">FORMA DE PAGAMENTO</th>
+            </tr>
+            <tr>
+                <td>{{pagamento}}</td>
+            </tr>
+        </table>
+        <p></p>
+        <table align="center">
+            <tr>
+                <th class="t2">OBSERVAÇÕES</th>
+            </tr>
+            <tr>
+                <td style="height: 250px;">{{obs}}</td>
+            </tr>
+        </table>
+        <p></p>
+        <table align="center">
+            <tr>
+                <th class="t2" colspan="2"> ASSINATURA DO CLIENTE</th>
+            </tr>
+            <tr>
+                <td>{{lista.nome}}</td>
+                <td>________________________________________</td>
+            </tr>
+        </table>
+    </div>
+</body>
+{% if error %}
+    <p style="color:red">{{ error }}</p>
+{% endif %}
