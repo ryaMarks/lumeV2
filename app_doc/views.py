@@ -8,6 +8,15 @@ from datetime import date  # biblioteca para coleta de tempo
 
 from app_doc.forms import ClienteForm
 
+#imports para a view pdf
+#Django imports
+from django.core.files.storage import FileSystemStorage
+from django.template.loader import render_to_string, get_template
+from django.http import HttpResponse
+from django.views.generic import View
+#WeasyPrint imports
+from weasyprint import CSS, HTML, Attachment
+
 # Create your views here.
 
 
@@ -90,3 +99,14 @@ def orderService(request, nome):
 
     else:
         return redirect("/login/")
+
+def pdf_generate(request):
+    html_template = get_template('procuracao.html').render()
+    #pdf file
+    html = HTML(string=html_template)
+    
+    pdf = html.write_pdf()
+    response = HttpResponse(pdf,content_type='application/pdf')
+    response['Content-Disposition'] = 'filename="procuracao.pdf"'
+    
+    return response
