@@ -99,5 +99,3 @@ def orderService(request, nome):
     else:
         return redirect("/login/")
 
-def void_func():
-    pass
