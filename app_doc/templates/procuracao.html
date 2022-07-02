@@ -1,0 +1,39 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--Configurações da página-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=opera">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= '{% static "css/proc.css" %}'>  <!--importa css da pagina-->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/Cabeçalho_1/favicons/favicon-16x16.png' %}">  <!--Insere icone da pagina(favicon)-->
+    <title>Lume Energia</title>  <!--Titulo da pagina-->
+</head>
+<body>
+{% block content %}
+    <div class="geral">
+        <font size="12">
+            <p style="text-align: center;"><b> PROCURAÇÃO </b></p>
+            <p style="padding-top: 10px;">
+                <b>Outorgante:</b> Eu <b>{{ lista.nome }}</b>, BRASILEIRO (A), portador do CPF <b>{{lista.cpf}}</b> e RG n° <b>{{lista.rg}}</b>, residente e domiciliado na <b>{{lista.endereço}}</b>, pelo presente instrumento, nomeio e constituo como meu procurador:
+            </p>
+            <p style="padding-top: -5px;">
+                <b>Outorgado (a):</b> LUME INSTALAÇÕES E MANUTENÇÕES LTDA, EMPRESA DE DIREITO PRIVADO, inscrita no CNPJ n° 34.267.891/0001-69, neste ato representada pelo seu responsável técnico, LEANDRO GOMES MUNIZ, BRASILEIRO, SOLTEIRO, ENGENHEIRO ELETRICISTA, , portador do CPF nº 027.231.763-20 e RG nº 13855932000-0, residente e domiciliado na Rua H-15 nº 1, Condomínio Ilhas Gregas, Torre Creta, apto 303 – Parque Shalon, São Luís - MA com poderes para representar o outorgante junto a EQUATORIAL ENERGIA MARANHÃO para SOLICITAÇÃO DO PARECER DE ACESSO PARA MICROGERAÇÃO DISTRIBUÍDA, incluindo as ASSINATURAS DO FORMULÁRIO DE SOLICITAÇÃO DO PARECER DE ACESSO (ANEXO I) e da ANOTAÇÃO DE RESPONSABILIDADE TÉCNICA (ART), SOLICITAÇÃO DE VISTORIA TÉCNICA, incluindo ASSINATURA DO FORMULÁRIO DE SOLICITAÇÃO DE VISTORIA(ANEXO VI), e para ADIÇÃO DE UNIDADE CONSUMIDORA, se necessário, responsabilizando-me por todos os atos praticados no cumprimento deste instrumento, cessando seus efeitos APÓS A CONCLUSÃO DA VISTORIA POR PARTE DA EQUATORIAL, EMISSÃO DO ACORDO OPERATIVO E FUNCIONAMENTO DO SISTEMA.
+            </p>
+            <div style="padding-top: 50px; text-align: right;">
+                <p>São Luís, {{data}}</p>
+            </div>
+            <div class="assinatura" style="padding-top: 70px;">
+                <p style="text-align: center;">__________________________________</p>
+                <p style="text-align: center;"><b>Outorgante</b></p>
+                <p style="text-align: center;"><b>{{lista.nome}}</b></p>
+                <p style="text-align: center;"><b>CPF: {{lista.cpf}}</b></p>
+            </div>
+            <p style="padding-top: 200px;"></p>
+        </font>
+    </div>
+{% endblock %}
+</body>
+</html>
