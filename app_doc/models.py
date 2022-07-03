@@ -37,7 +37,11 @@ class Cliente(models.Model):
     # dados da obra
     inicio = models.DateField('Inicio da obra', null=True, blank=True)
     fim = models.DateField('Fim da obra', null=True, blank=True)
+<<<<<<< HEAD
     equipe = models.DateField('Equipe de instalação: ', max_length=300, null=True)
+=======
+    equipe = models.CharField('Equipe de instalação: ', max_length=300, null=True)
+>>>>>>> correção view procuração e datefields do modelo cliente
 
     # dados do sistema
     sis_pot = models.CharField('Potencia do Sistema:', max_length=4, null=True)
