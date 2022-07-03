@@ -75,7 +75,7 @@ def getData():
 
 
 # função que retorna o usuario selecionado
-def user(request, nome):  # recebe a solicitacao html e o nome do usuario
+def users(request, nome):  # recebe a solicitacao html e o nome do usuario
     if request.user.is_authenticated:  # se o usuario estiver autenticado (logado)
         lista = Cliente.objects.get(nome=nome)  # pega os dados do cliente com o nome e salva em 'lista'
         context = {  # variavel que carrega os dados para o html
@@ -105,8 +105,8 @@ def procuracao(request, nome):  # recebe a solicitacao html e o nome do usuario
             'lista': lista,  # passa os dados do cliente que serao enviados para o html
             'data': getData(),  # carrega a data atual no documento
         }
-        html_template = render(request, 'procuracao.html', context=context)  # prepara o template html
-        html = HTML(string=html_template)
+        html_string = render_to_string('procuracao.html', context=context)  # prepara o template html
+        html = HTML(string=html_string)
         pdf = html.write_pdf()  # transforma html em pdf
         response = HttpResponse(pdf,content_type='application/pdf')
         response['Content-Disposition'] = 'filename="procuracao.pdf"'
