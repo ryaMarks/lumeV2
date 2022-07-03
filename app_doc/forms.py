@@ -25,8 +25,6 @@ class ClienteForm(forms.ModelForm):
         input_formats=('%Y-%m-%d',),
     )
 
-<<<<<<< HEAD
-=======
     inicio = forms.DateField(
         label='date',
         widget=forms.DateInput(
@@ -47,7 +45,6 @@ class ClienteForm(forms.ModelForm):
         input_formats=('%Y-%m-%d',),
     )
 
->>>>>>> correção view procuração e datefields do modelo cliente
         
     class Meta:
         model = Cliente
