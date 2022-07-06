@@ -1,0 +1,23 @@
+{% extends "clientes.html" %}
+
+
+{% block content %}
+<div class="container">
+    <h4>{{lista}}</h4>
+    <div class="botao-3">
+        <a class="waves-effect waves-light btn-large" href="http://127.0.0.1:8000/clientes/{{lista}}/procuracao/" target="_blank">PROCURAÇÃO</a>
+    </div>
+    <div class="botao-3">
+        <a class="waves-effect waves-light btn-large" href="http://127.0.0.1:8000/clientes/{{lista}}/ordemServico/" target="_blank">ORDEM DE SERVIÇO</a>
+    </div>
+    <div class="botao-3">
+        <a class="waves-effect waves-light btn-large" href="">TERMO DE ADESÃO</a>
+    </div>
+    <div class="botao-3">
+        <a class="waves-effect waves-light btn-large" href="#">ETC</a>
+    </div>
+</div>
+{% endblock %}
+{% if error %}
+    <p style="color:red">{{ error }}</p>
+{% endif %}
