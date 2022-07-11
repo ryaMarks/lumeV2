@@ -1,0 +1,19 @@
+body, html {
+    height: 100%;
+}
+
+.titulo{
+    text-align: center;
+    padding-top: 200px;
+}
+.geral{
+    padding-top: 2.5cm;
+    padding-left: 3cm;
+    padding-right: 3cm;
+    font-family: 'Arial Narrow';
+}
+
+p{
+    padding:0%;
+    margin: 0%;
+}
