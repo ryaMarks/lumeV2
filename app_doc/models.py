@@ -15,6 +15,11 @@ disjuntores = (
     ('125A-TRI', '125A - TRI'),
 )
 
+modalidade=(
+    ('individual', 'individual'),
+    ('autoconsumo', 'autoconsumo remoto'),
+)
+
 class Cliente(models.Model):
     # dados do cliente
     nome = models.CharField('Nome', max_length=100, null=True)
@@ -43,7 +48,7 @@ class Cliente(models.Model):
     sis_pot = models.CharField('Potencia do Sistema:', max_length=4, null=True)
     ger_mensal = models.CharField('Geração Mensal:', max_length=8, null=True)
     tipo_padrao = models.CharField('Padrao de entrada:', max_length=10, null=True)
-    tipo_geracao = models.CharField('Tipo de geração:', max_length=20, null=True)
+    tipo_geracao = models.CharField('Tipo de geração:',choices=modalidade, max_length=20, null=True)
     mudar_padrao = models.CharField('Padrao precisa ser mudado ?:', max_length=10, null=True)
     inversor = models.CharField('Inversor(es) Utilizado(s):', max_length=20, null=True)
     qt_inv = models.IntegerField('Quantidade de inversores:', null=True)
@@ -51,7 +56,7 @@ class Cliente(models.Model):
     qt_mod = models.IntegerField('Quantidade de modulos:', null=True)
     strBx = models.CharField('Modelo de StringBox usada:', max_length=200, null=True)
     qt_strBx = models.IntegerField('Quantidade de stringBox:', null=True)
-    disj = models.CharField('Disjuntor de entrada do sistema:', max_length=15, null=True)
+    disj = models.CharField('Disjuntor de entrada do sistema:', choices=disjuntores,max_length=15, null=True)
     disjSis = models.CharField('Disjuntor de proteção CA do sistema:', max_length=20, null=True)
     dps = models.CharField('DPS CC do Sistema:', max_length=20, null=True)
 

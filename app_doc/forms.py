@@ -16,7 +16,7 @@ class ClienteForm(forms.ModelForm):
     )
 
     nascimento = forms.DateField(
-        label='date',
+        label='Nascimento',
         widget=forms.DateInput(
             format='%Y-%m-%d',
             attrs={
@@ -26,7 +26,7 @@ class ClienteForm(forms.ModelForm):
     )
 
     inicio = forms.DateField(
-        label='date',
+        label='inicio',
         widget=forms.DateInput(
             format='%Y-%m-%d',
             attrs={
@@ -36,7 +36,7 @@ class ClienteForm(forms.ModelForm):
     )
 
     fim = forms.DateField(
-        label='date',
+        label='fim',
         widget=forms.DateInput(
             format='%Y-%m-%d',
             attrs={
