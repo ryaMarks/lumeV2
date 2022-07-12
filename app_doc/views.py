@@ -19,7 +19,7 @@ from django.views.generic import View
 # arquivos auxiliares que serão utilizados aqui
 from .models import Cliente  # importa a classe Cliente do arquivo .models
 from app_doc.forms import ClienteForm  # importa a classe ClienteForm do arquivo forms dentro da pasta app_doc
-from .trello import getClientData, clientsNome  # carrega os dados do trello
+#from .trello import getClientData, clientsNome  # carrega os dados do trello
 from datetime import date  # biblioteca para coleta de tempo
 # importa a biblioteca do WeasyPrint (gerar PDF de páginas html)
 from weasyprint import CSS, HTML, Attachment  # importa biblioteca do weasyprint para arquivos estaticos
