@@ -1,4 +1,3 @@
-from tkinter import TRUE
 from django.db import models  # importa a manipulação de modelos do django
 from django.utils.text import slugify
 
