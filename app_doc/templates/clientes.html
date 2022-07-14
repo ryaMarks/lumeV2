@@ -21,7 +21,7 @@
     <div class="container">
         <div class="container">
             <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-                <a href="http://127.0.0.1:8000/clientes">
+                <a href="clientes/">
                 <span><img src="{% static 'img/lumi_original.png' %}"></span>
               </a>
 
@@ -37,7 +37,7 @@
 {% block content %}
         <div class="row container">
             <ul class="nav">
-                <li class="nav-item col-md-4"><a href="http://127.0.0.1:8000/cadastro/" class="nav-link" >Cadastar</a></li>
+                <li class="nav-item col-md-4"><a href="/cadastro/" class="nav-link" >Cadastar</a></li>
                 <li class="nav-item col-md-4"><a href="#" class="nav-link">Excluir</a></li>
                 <li class="nav-item col-md-4"><a href="#" class="nav-link">Editar</a></li>
             </ul>
@@ -46,7 +46,7 @@
         <div class="container">
             <div class="row list-item">
                 <div class="input-container col-md-12" style="border: 2px solid  #f9b60a; border-radius: 4px;">
-                    <a href='http://127.0.0.1:8000/clientes/{{cliente.nome}}'>{{ cliente.nome }}</a>
+                    <a href='/clientes/{{cliente.nome}}'>{{ cliente.nome }}</a>
                 </div>
             </div>
         </div>
