@@ -1,6 +1,5 @@
 {% load static%}
 
-{% block content %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,6 +12,7 @@
     <title>PROCURAÇÃO - {{ lista.nome }}</title>  <!--Titulo da pagina-->
 </head>
 <body>
+    {% block content %}
     <div style="padding-right: 1cm;
                 padding-left: 1cm;
                 font-family: 'Arial Narrow';">
@@ -35,7 +35,6 @@
             </div>
         </font>
     </div>
-
+    {% endblock %}
 </body>
 </html>
-{% endblock %}
